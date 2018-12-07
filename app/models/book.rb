@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  belongs_to :publisher
+
   scope :ar_category, -> (category) { where(category: category) }
   scope :arel_category, -> (category) { where(arel_table[:category].eq(category)) }
 
